@@ -2,9 +2,23 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
+table {
+    width: 70%;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
 th, td {
-    text-align: left;
+    text-align: center;
 }
 img {
-    max-width: 1024px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
