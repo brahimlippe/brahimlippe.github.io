@@ -13,7 +13,9 @@
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (0767f8302a, 2020-10-17)"
-   sodipodi:docname="isbain.svg">
+   sodipodi:docname="isbain.svg"
+   direction="rtl"
+   xml:lang="ar">
   <defs
      id="defs2">
     <marker
@@ -26,7 +28,7 @@
        inkscape:isstock="true">
       <path
          transform="matrix(-0.8,0,0,-0.8,-10,0)"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         style="fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:1pt;stroke-opacity:1"
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path936" />
     </marker>
@@ -54,7 +56,7 @@
        inkscape:isstock="true">
       <path
          transform="matrix(-0.8,0,0,-0.8,-10,0)"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         style="fill:#00ff00;fill-opacity:1;fill-rule:evenodd;stroke:#00ff00;stroke-width:1pt;stroke-opacity:1"
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path936-3" />
     </marker>
@@ -68,7 +70,7 @@
        inkscape:isstock="true">
       <path
          transform="matrix(-0.8,0,0,-0.8,-10,0)"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         style="fill:#00ffff;fill-opacity:1;fill-rule:evenodd;stroke:#00ffff;stroke-width:1pt;stroke-opacity:1"
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path936-3-2" />
     </marker>
@@ -82,7 +84,7 @@
        inkscape:isstock="true">
       <path
          transform="matrix(-0.8,0,0,-0.8,-10,0)"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         style="fill:#00ffff;fill-opacity:1;fill-rule:evenodd;stroke:#00ffff;stroke-width:1pt;stroke-opacity:1"
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path936-9" />
     </marker>
@@ -96,7 +98,7 @@
        inkscape:isstock="true">
       <path
          transform="matrix(-0.8,0,0,-0.8,-10,0)"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         style="fill:#00ff00;fill-opacity:1;fill-rule:evenodd;stroke:#00ff00;stroke-width:1pt;stroke-opacity:1"
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path936-3-6" />
     </marker>
@@ -110,7 +112,7 @@
        inkscape:isstock="true">
       <path
          transform="matrix(-0.8,0,0,-0.8,-10,0)"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         style="fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:1pt;stroke-opacity:1"
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path936-3-2-6" />
     </marker>
@@ -122,9 +124,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="-96.786328"
-     inkscape:cy="524.51541"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="200.98449"
+     inkscape:cy="266.14665"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -142,7 +144,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -151,271 +153,293 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-25.000001,-4.8673388)">
-    <circle
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.565;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.393855;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path833"
-       cx="39.282501"
-       cy="54.865845"
-       r="14" />
-    <circle
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.564999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       cx="58.727081"
+       cy="61.888851"
+       rx="9.4615469"
+       ry="10.066291" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.393854;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path833-3"
-       cx="84.282501"
-       cy="54.865845"
-       r="14" />
-    <circle
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.564999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       cx="89.139191"
+       cy="61.888851"
+       rx="9.4615469"
+       ry="10.066291" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.393854;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path833-3-6"
-       cx="129.2825"
-       cy="54.865845"
-       r="14" />
-    <circle
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.564999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       cx="119.55131"
+       cy="61.888851"
+       rx="9.4615469"
+       ry="10.066291" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.393854;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path833-3-6-7"
-       cx="174.2825"
-       cy="54.865845"
-       r="14.000001" />
+       cx="149.96342"
+       cy="61.888851"
+       rx="9.4615469"
+       ry="10.066291" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="162.77293"
-       y="57.252281"
-       id="text913"><tspan
+       style="font-style:normal;font-weight:normal;font-size:7.37749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.184437"
+       x="162.47025"
+       y="61.6646"
+       id="text913"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
          id="tspan911"
-         x="162.77293"
-         y="57.252281"
-         style="stroke-width:0.264583">دوكاه</tspan></text>
+         x="162.47025"
+         y="61.6646"
+         style="stroke-width:0.184437">دوكاه</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="117.2349"
-       y="51.550186"
-       id="text917"><tspan
+       style="font-style:normal;font-weight:normal;font-size:4.91835px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.184437"
+       x="131.81252"
+       y="57.199734"
+       id="text917"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
          id="tspan915"
-         x="117.2349"
-         y="51.550186"
-         style="font-size:7.05556px;stroke-width:0.264583">صغرى</tspan><tspan
+         x="131.81252"
+         y="57.199734"
+         style="font-size:4.91835px;stroke-width:0.184437">صغرى</tspan><tspan
          sodipodi:role="line"
-         x="117.2349"
-         y="60.369637"
-         style="font-size:7.05556px;stroke-width:0.264583"
+         x="131.81252"
+         y="63.347672"
+         style="font-size:4.91835px;stroke-width:0.184437"
          id="tspan919">الإصبعين</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:9.87778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="71.336472"
-       y="57.469353"
-       id="text923"><tspan
+       style="font-style:normal;font-weight:normal;font-size:6.88568px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.184437"
+       x="101.73238"
+       y="61.071671"
+       id="text923"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
          id="tspan921"
-         x="71.336472"
-         y="57.469353"
-         style="font-size:9.87778px;stroke-width:0.264583">الحجاز</tspan></text>
+         x="101.73238"
+         y="61.071671"
+         style="font-size:6.88568px;stroke-width:0.184437">الحجاز</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="27.592575"
-       y="57.750137"
-       id="text927"><tspan
+       style="font-style:normal;font-weight:normal;font-size:7.37749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.184437"
+       x="68.646095"
+       y="61.493412"
+       id="text927"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
          id="tspan925"
-         x="27.592575"
-         y="57.750137"
-         style="stroke-width:0.264583">النوى</tspan></text>
+         x="68.646095"
+         y="61.493412"
+         style="stroke-width:0.184437">النوى</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
-       d="m 173.82248,41.282647 c 0,0 -22.64607,-25.327085 -44.9356,-0.297725"
+       style="fill:none;stroke:#0000ff;stroke-width:0.184728;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 149.65253,52.122254 c 0,0 -15.30478,-18.210698 -30.3686,-0.21407"
        id="path931" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="136.58932"
-       y="13.302793"
-       id="text1243"><tspan
+       style="font-style:normal;font-weight:normal;font-size:7.37749px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.184437"
+       x="138.84891"
+       y="28.872154"
+       id="text1243"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
          id="tspan1241"
-         x="136.58932"
-         y="13.302793"
-         style="stroke-width:0.264583">صغرى</tspan><tspan
+         x="138.84891"
+         y="28.872154"
+         style="text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke-width:0.184437">صغرى</tspan><tspan
          sodipodi:role="line"
-         x="136.58932"
-         y="26.531918"
-         style="stroke-width:0.264583"
+         x="138.84891"
+         y="38.094017"
+         style="text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke-width:0.184437"
          id="tspan1245">الإصبعين</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-5)"
-       d="m 128.88688,40.984922 c 0,0 -22.64607,-25.327086 -44.9356,-0.297725"
+       style="fill:none;stroke:#00ff00;stroke-width:0.184728;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-5)"
+       d="m 119.28393,51.908184 c 0,0 -15.30477,-18.210699 -30.368583,-0.21407"
        id="path931-5" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-5-6)"
-       d="m 83.95128,40.687197 c 0,0 -22.64607,-25.327086 -44.935604,-0.297724"
+       style="fill:none;stroke:#00ffff;stroke-width:0.184728;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-5-6)"
+       d="m 88.915347,51.694114 c 0,0 -15.304774,-18.2107 -30.368594,-0.21407"
        id="path931-5-9" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="45.205395"
-       y="10.551728"
-       id="text1243-1"><tspan
+       style="font-style:normal;font-weight:normal;font-size:7.37749px;line-height:1.25;font-family:sans-serif;fill:#00ffff;fill-opacity:1;stroke:none;stroke-width:0.184437;"
+       x="86.138344"
+       y="29.110197"
+       id="text1243-1"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
          id="tspan1241-2"
-         x="45.205395"
-         y="10.551728"
-         style="stroke-width:0.264583">صغرى</tspan><tspan
+         x="86.138344"
+         y="29.110197"
+         style="stroke-width:0.184437;fill:#00ffff;fill-opacity:1;">صغرى</tspan><tspan
          sodipodi:role="line"
-         x="45.205395"
-         y="23.780853"
-         style="stroke-width:0.264583"
+         x="86.138344"
+         y="38.332058"
+         style="stroke-width:0.184437;fill:#00ffff;fill-opacity:1;"
          id="tspan1245-7">السيكاه</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="93.633415"
-       y="9.6568518"
-       id="text1428"><tspan
+       style="font-style:normal;font-weight:normal;font-size:7.37749px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:0.184437"
+       x="108.31744"
+       y="28.43445"
+       id="text1428"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
          id="tspan1426"
-         x="93.633415"
-         y="9.6568518"
-         style="stroke-width:0.264583">بعد</tspan><tspan
+         x="108.31744"
+         y="28.43445"
+         style="text-align:center;text-anchor:middle;fill:#00ff00;fill-opacity:1;stroke-width:0.184437">بعد</tspan><tspan
          sodipodi:role="line"
-         x="93.633415"
-         y="22.885977"
-         style="stroke-width:0.264583"
+         x="108.31744"
+         y="37.656311"
+         style="text-align:center;text-anchor:middle;fill:#00ff00;fill-opacity:1;stroke-width:0.184437"
          id="tspan1430">الحجاز</tspan></text>
-    <circle
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.564999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.393854;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path833-2"
-       cx="40.775349"
-       cy="130.99019"
-       r="14" />
-    <circle
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.564999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       cx="59.735985"
+       cy="116.62384"
+       rx="9.4615469"
+       ry="10.066291" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.393854;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path833-3-61"
-       cx="85.775352"
-       cy="130.99019"
-       r="14" />
-    <circle
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.564999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       cx="90.148094"
+       cy="116.62384"
+       rx="9.4615469"
+       ry="10.066291" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.393854;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path833-3-6-8"
-       cx="130.77534"
-       cy="130.99019"
-       r="14" />
-    <circle
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.564999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       cx="120.56021"
+       cy="116.62384"
+       rx="9.4615469"
+       ry="10.066291" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.393854;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path833-3-6-7-7"
-       cx="175.77534"
-       cy="130.99019"
-       r="14.000001" />
+       cx="150.97234"
+       cy="116.62384"
+       rx="9.4615469"
+       ry="10.066291" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:8.46667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="164.26576"
-       y="133.37662"
-       id="text913-9"><tspan
+       style="font-style:normal;font-weight:normal;font-size:5.90202px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.184437"
+       x="164.74667"
+       y="114.37191"
+       id="text913-9"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
          id="tspan911-2"
-         x="164.26576"
-         y="133.37662"
-         style="font-size:8.46667px;stroke-width:0.264583">حسيني</tspan></text>
+         x="164.74667"
+         y="114.37191"
+         style="font-size:5.90202px;stroke-width:0.184437">حسيني</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="120.69913"
-       y="133.54895"
-       id="text917-0"><tspan
+       style="font-style:normal;font-weight:normal;font-size:7.37749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.184437"
+       x="132.33331"
+       y="115.13994"
+       id="text917-0"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
-         x="120.69913"
-         y="133.54895"
-         style="font-size:10.5833px;stroke-width:0.264583"
+         x="132.33331"
+         y="115.13994"
+         style="font-size:7.37749px;stroke-width:0.184437"
          id="tspan919-3">عجم</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="77.427551"
-       y="128.13936"
-       id="text923-7"><tspan
+       style="font-style:normal;font-weight:normal;font-size:4.91835px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.184437"
+       x="99.038704"
+       y="110.76054"
+       id="text923-7"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
          id="tspan921-5"
-         x="77.427551"
-         y="128.13936"
-         style="font-size:7.05556px;stroke-width:0.264583">جواب</tspan><tspan
+         x="99.038704"
+         y="110.76054"
+         style="font-size:4.91835px;stroke-width:0.184437">جواب</tspan><tspan
          sodipodi:role="line"
-         x="77.427551"
-         y="136.9588"
-         style="font-size:7.05556px;stroke-width:0.264583"
+         x="99.038704"
+         y="116.90847"
+         style="font-size:4.91835px;stroke-width:0.184437"
          id="tspan1667">شهناز</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="29.085423"
-       y="133.87448"
-       id="text927-9"><tspan
+       style="font-style:normal;font-weight:normal;font-size:7.37749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.184437"
+       x="68.826607"
+       y="113.75688"
+       id="text927-9"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
          id="tspan925-2"
-         x="29.085423"
-         y="133.87448"
-         style="stroke-width:0.264583">محير</tspan></text>
+         x="68.826607"
+         y="113.75688"
+         style="stroke-width:0.184437">محير</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-0)"
-       d="m 175.31532,117.40699 c 0,0 -22.64607,-25.327085 -44.9356,-0.29772"
+       style="fill:none;stroke:#00ffff;stroke-width:0.184728;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-0)"
+       d="m 150.66143,106.85723 c 0,0 -15.30478,-18.210695 -30.3686,-0.21406"
        id="path931-2" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="40.83831"
-       y="86.147263"
-       id="text1243-8"><tspan
+       style="font-style:normal;font-weight:normal;font-size:7.37749px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.184437;"
+       x="88.564392"
+       y="82.007362"
+       id="text1243-8"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
          id="tspan1241-9"
-         x="40.83831"
-         y="86.147263"
-         style="stroke-width:0.264583">صغرى</tspan><tspan
+         x="88.564392"
+         y="82.007362"
+         style="stroke-width:0.184437;fill:#0000ff;fill-opacity:1;">صغرى</tspan><tspan
          sodipodi:role="line"
-         x="40.83831"
-         y="99.376389"
-         style="stroke-width:0.264583"
+         x="88.564392"
+         y="91.229225"
+         style="stroke-width:0.184437;fill:#0000ff;fill-opacity:1;"
          id="tspan1245-73">الإصبعين</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-5-3)"
-       d="m 130.37972,117.10927 c 0,0 -22.64607,-25.327091 -44.935596,-0.29773"
+       style="fill:none;stroke:#00ff00;stroke-width:0.184728;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-5-3)"
+       d="m 120.29283,106.64317 c 0,0 -15.30477,-18.210706 -30.368582,-0.21407"
        id="path931-5-6" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-5-6-0)"
-       d="m 85.444124,116.81154 c 0,0 -22.64607,-25.327086 -44.9356,-0.29772"
+       style="fill:none;stroke:#0000ff;stroke-width:0.184728;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-5-6-0)"
+       d="m 89.924248,106.4291 c 0,0 -15.304775,-18.210706 -30.368591,-0.21407"
        id="path931-5-9-1" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="139.89163"
-       y="86.365585"
-       id="text1243-1-2"><tspan
+       style="font-style:normal;font-weight:normal;font-size:7.37749px;line-height:1.25;font-family:sans-serif;fill:#00ffff;fill-opacity:1;stroke:none;stroke-width:0.184437;"
+       x="149.7677"
+       y="81.392464"
+       id="text1243-1-2"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
          id="tspan1241-2-9"
-         x="139.89163"
-         y="86.365585"
-         style="stroke-width:0.264583">صغرى</tspan><tspan
+         x="149.7677"
+         y="81.392464"
+         style="stroke-width:0.184437;fill:#00ffff;fill-opacity:1;">صغرى</tspan><tspan
          sodipodi:role="line"
-         x="139.89163"
-         y="99.594711"
-         style="stroke-width:0.264583"
+         x="149.7677"
+         y="90.614326"
+         style="stroke-width:0.184437;fill:#00ffff;fill-opacity:1;"
          id="tspan1245-7-3">السيكاه</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="95.126259"
-       y="85.781197"
-       id="text1428-1"><tspan
+       style="font-style:normal;font-weight:normal;font-size:7.37749px;line-height:1.25;font-family:sans-serif;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:0.184437"
+       x="108.12323"
+       y="81.306473"
+       id="text1428-1"
+       transform="scale(0.96949672,1.031463)"><tspan
          sodipodi:role="line"
          id="tspan1426-9"
-         x="95.126259"
-         y="85.781197"
-         style="stroke-width:0.264583">بعد</tspan><tspan
+         x="108.12323"
+         y="81.306473"
+         style="text-align:center;text-anchor:middle;fill:#00ff00;fill-opacity:1;stroke-width:0.184437">بعد</tspan><tspan
          sodipodi:role="line"
-         x="95.126259"
-         y="99.010323"
-         style="stroke-width:0.264583"
+         x="108.12323"
+         y="90.528336"
+         style="text-align:center;text-anchor:middle;fill:#00ff00;fill-opacity:1;stroke-width:0.184437"
          id="tspan1430-4">الحجاز</tspan></text>
   </g>
 </svg>

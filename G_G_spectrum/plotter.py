@@ -32,6 +32,7 @@ def plot(filename, color, label):
     plt.plot(X, Y, ",-", color=color, linestyle='-', label=label, alpha=0.5)
     plt.legend()
 
+plt.figure(figsize=(13.0,6.0))
 plot('violin_low_G_spectrum.txt', 'blue', arabic(u'يكاه'))
 plot('violin_G_spectrum.txt', 'magenta', arabic(u'نوى'))
 plt.savefig(os.path.dirname(os.path.realpath(__file__)) + '/plot.png')

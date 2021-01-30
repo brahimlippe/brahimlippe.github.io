@@ -30,5 +30,6 @@ def plot(filename, color, label):
     plt.plot(X, Y,",-", color=color, label=label)
     plt.legend()
 
+plt.figure(figsize=(13.0,6.0))
 plot('violin_G_spectrum.txt', 'blue', arabic(u'نوى'))
 plt.show()

@@ -40,6 +40,7 @@ def plot(filename, color, label):
         plt.annotate(arabic(u"إئتلاف 11/8"), (X[2381], Y[2381]), arrowprops={"arrowstyle":"->"}, xytext=(X[2381]+10, Y[2381]+10))
     plt.legend()
 
+plt.figure(figsize=(13.0,6.0))
 plot('D_11_8_spectrum.txt', 'magenta', arabic(u'جهاركاه راست دوكاه'))
 plot('violin_D_spectrum.txt', 'blue', arabic(u'دوكاه'))
 plt.savefig(os.path.dirname(os.path.realpath(__file__)) + '/plot.png')
