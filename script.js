@@ -6,6 +6,19 @@ function gcd(a, b) {
   }
   return a;
 }
+function play_interval(ratio) {
+  const note = "D3";
+  const type = "sawtooth20";
+  const duration = 2;
+  const osc1 = new Tone.Oscillator(note, type)
+    .toDestination()
+    .start()
+    .stop("+" + duration + "n");
+  new Tone.Oscillator(osc1.toFrequency(note) * ratio, type)
+    .toDestination()
+    .start("+" + duration + "n")
+    .stop("+" + duration / 2 + "n");
+}
 function make_table(table_id, content) {
   table = document.getElementById(table_id);
   thead = table.createTHead();
@@ -32,7 +45,15 @@ function make_table(table_id, content) {
       if (num < 15 && den < 15) className = "good-interval";
       if (num > 16 || den > 16) className = "bad-interval";
       row.insertCell(-1).outerHTML =
-        "<td class=" + className + ">" + num + "/" + den + "</td>";
+        "<td onclick='play_interval(" +
+        num / den +
+        ")' class='playable " +
+        className +
+        "'>" +
+        num +
+        "/" +
+        den +
+        "</td>";
       row.insertCell(-1).outerHTML =
         "<td class=" +
         className +
