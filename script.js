@@ -69,6 +69,18 @@ function make_table(table_id, tonic_frequency, content) {
   }
 }
 
+function fill_index() {
+  titles = document.getElementsByTagName("h1");
+  for (i = 0; i < titles.length; i++) {
+    li = document.createElement("LI");
+    a = document.createElement("A");
+    a.appendChild(document.createTextNode(titles[i].innerHTML));
+    a.href = "#" + titles[i].id;
+    li.appendChild(a);
+    document.getElementById("index").appendChild(li);
+  }
+}
+
 function load_tables() {
   make_table("table-dhil", new Tone.Frequency("C3").toFrequency(), [
     ["راست", 1, 1],
@@ -151,4 +163,9 @@ function load_tables() {
     ["أوج", 440, 243],
     ["كردان", 160, 81],
   ]);
+}
+
+function init() {
+  fill_index();
+  load_tables();
 }
