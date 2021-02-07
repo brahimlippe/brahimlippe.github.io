@@ -6,8 +6,7 @@ function gcd(a, b) {
   }
   return a;
 }
-function play_interval(ratio) {
-  const note = "D3";
+function play_interval(ratio, note) {
   const type = "sawtooth20";
   const duration = 2;
   const osc1 = new Tone.Oscillator(note, type)
@@ -19,7 +18,7 @@ function play_interval(ratio) {
     .start("+" + duration + "n")
     .stop("+" + duration / 2 + "n");
 }
-function make_table(table_id, content) {
+function make_table(table_id, tonic_frequency, content) {
   table = document.getElementById(table_id);
   thead = table.createTHead();
   header = thead.insertRow(0);
@@ -47,6 +46,8 @@ function make_table(table_id, content) {
       row.insertCell(-1).outerHTML =
         "<td onclick='play_interval(" +
         num / den +
+        "," +
+        (tonic_frequency * content[i][1]) / content[i][2] +
         ")' class='playable " +
         className +
         "'>" +
@@ -63,8 +64,9 @@ function make_table(table_id, content) {
     }
   }
 }
+
 function load_tables() {
-  make_table("table-dhil", [
+  make_table("table-dhil", new Tone.Frequency("C3").toFrequency(), [
     ["راست", 1, 1],
     ["دوكاه", 9, 8],
     ["سيكاه", 5, 4],
@@ -74,21 +76,21 @@ function load_tables() {
     ["ماهور", 15, 8],
     ["كردان", 2, 1],
   ]);
-  make_table("table-isbain", [
+  make_table("table-isbain", new Tone.Frequency("D3").toFrequency(), [
     ["دوكاه", 1, 1],
     ["صغرى الإصبعين", 15, 14],
     ["حجاز", 5, 4],
     ["نوى", 4, 3],
     ["حسيني", 3, 2],
   ]);
-  make_table("table-inqilab-isbain", [
+  make_table("table-inqilab-isbain", new Tone.Frequency("A3").toFrequency(), [
     ["حسيني", 1, 1],
     ["عجم", 16, 15],
     ["جواب شهناز", 56, 45],
     ["محير", 4, 3],
     ["جواب كردي", 64, 45],
   ]);
-  make_table("table-rast-dhil", [
+  make_table("table-rast-dhil", new Tone.Frequency("C3").toFrequency(), [
     ["راست", 1, 1],
     ["دوكاه", 14, 13],
     ["وسطى الصبا", 7, 6],
@@ -98,14 +100,14 @@ function load_tables() {
     ["الليل", 7, 4],
     ["كردان", 2, 1],
   ]);
-  make_table("table-saba", [
+  make_table("table-saba", new Tone.Frequency("D3").toFrequency(), [
     ["دوكاه", 1, 1],
     ["صغرى الصبا", 14, 13],
     ["وسطى الصبا", 7, 6],
     ["صبا", 5, 4],
     ["الحسيني", 3, 2],
   ]);
-  make_table("table-sikah", [
+  make_table("table-sikah", new Tone.Frequency("C3").toFrequency() * 1.25, [
     ["سيكاه", 1, 1],
     ["جهاركاه", 16, 15],
     ["نوى", 6, 5],
@@ -115,7 +117,7 @@ function load_tables() {
     ["محير", 9, 5],
     ["جواب سيكاه", 2, 1],
   ]);
-  make_table("table-hsin", [
+  make_table("table-hsin", new Tone.Frequency("D3").toFrequency(), [
     ["دوكاه", 1, 1],
     ["صغرى الحسين", 12, 11],
     ["وسطى الحسين", 6, 5],
@@ -125,7 +127,7 @@ function load_tables() {
     ["كردان", 16, 9],
     ["محير", 2, 1],
   ]);
-  make_table("table-muhair-sikah", [
+  make_table("table-muhair-sikah", new Tone.Frequency("D3").toFrequency(), [
     ["دوكاه", 1, 1],
     ["بوسلك", 9, 8],
     ["وسطى الحسين", 6, 5],
