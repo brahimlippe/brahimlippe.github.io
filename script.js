@@ -50,11 +50,11 @@ function make_table(table_id, tonic_frequency, content) {
         (tonic_frequency * content[i][1]) / content[i][2] +
         ")' class='playable " +
         className +
-        "'>" +
+        "'>\\({" +
         num +
-        "/" +
+        " \\over " +
         den +
-        "</td>";
+        "}\\)</td>";
       row.insertCell(-1).outerHTML =
         "<td class=" +
         className +
@@ -164,4 +164,5 @@ function load_tables() {
 function init() {
   fill_index();
   load_tables();
+  MathJax.typeset();
 }
