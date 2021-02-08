@@ -50,21 +50,17 @@ function make_table(table_id, tonic_frequency, content) {
         (tonic_frequency * content[i][1]) / content[i][2] +
         ")' class='playable " +
         className +
-        "'><math><mfrac><mn>" +
+        "'>" +
         num +
-        "</mn><mn>" +
+        "/" +
         den +
-        "</mn></mfrac></math></td>";
+        "</td>";
       row.insertCell(-1).outerHTML =
-        "<td onclick='play_interval(" +
-        num / den +
-        "," +
-        (tonic_frequency * content[i][1]) / content[i][2] +
-        ")' class='playable " +
+        "<td class=" +
         className +
-        "'><math><mn>" +
+        ">" +
         (6 * Math.log2(num / den)).toFixed(3) +
-        "</mn></math></td>";
+        "</td>";
     }
   }
 }
