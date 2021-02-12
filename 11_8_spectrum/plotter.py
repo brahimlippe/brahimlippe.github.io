@@ -1,5 +1,5 @@
-import matplotlib;
-import matplotlib.pyplot as plt;
+import matplotlib
+import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib
 from bidi.algorithm import get_display
@@ -43,4 +43,4 @@ def plot(filename, color, label):
 plt.figure(figsize=(13.0,6.0))
 plot('D_11_8_spectrum.txt', 'magenta', arabic(u'جهاركاه راست دوكاه'))
 plot('violin_D_spectrum.txt', 'blue', arabic(u'دوكاه'))
-plt.savefig(os.path.dirname(os.path.realpath(__file__)) + '/plot.png')
+plt.savefig(os.path.dirname(os.path.realpath(__file__)) + '/plot.png', transparent=True)

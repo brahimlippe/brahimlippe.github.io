@@ -35,4 +35,4 @@ def plot(filename, color, label):
 plt.figure(figsize=(13.0,6.0))
 plot('violin_low_G_spectrum.txt', 'blue', arabic(u'يكاه'))
 plot('violin_G_spectrum.txt', 'magenta', arabic(u'نوى'))
-plt.savefig(os.path.dirname(os.path.realpath(__file__)) + '/plot.png')
+plt.savefig(os.path.dirname(os.path.realpath(__file__)) + '/plot.png', transparent=True)

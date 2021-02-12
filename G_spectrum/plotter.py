@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib
 from bidi.algorithm import get_display
 import arabic_reshaper
+import os
 
 def arabic(str):
     reshaped_text = arabic_reshaper.reshape(str)
@@ -31,5 +32,5 @@ def plot(filename, color, label):
     plt.legend()
 
 plt.figure(figsize=(13.0,6.0))
-plot('violin_G_spectrum.txt', 'blue', arabic(u'نوى'))
-plt.show()
+plot('violin_G_spectrum.txt', 'tab:blue', arabic(u'نوى'))
+plt.savefig(os.path.dirname(os.path.realpath(__file__)) + '/violin_G_spectrum.png', transparent=True)
