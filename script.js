@@ -43,6 +43,7 @@ function make_table(table_id, tonic_frequency, content) {
       var className = "";
       if (num < 15 && den < 15) className = "good-interval";
       if (num > 16 || den > 16) className = "bad-interval";
+      if (den === 1) className = "perfect-interval";
       row.insertCell(-1).outerHTML =
         "<td onclick='play_interval(" +
         num / den +
@@ -95,6 +96,34 @@ function load_tables() {
     ["نوى", 4, 3],
     ["حسيني", 3, 2],
   ]);
+  make_table(
+    "table-isbain-second-octave",
+    new Tone.Frequency("D3").toFrequency(),
+    [
+      ["دوكاه", 1, 1],
+      ["صغرى الإصبعين", 15, 7],
+      ["حجاز", 5, 2],
+      ["نوى", 8, 3],
+      ["حسيني", 3, 1],
+      ["عجم", 16, 5],
+      ["الكردان المخفوض", 7, 2],
+      ["محير", 4, 1],
+    ]
+  );
+  make_table(
+    "table-isbain-third-octave",
+    new Tone.Frequency("D3").toFrequency(),
+    [
+      ["دوكاه", 1, 1],
+      ["صغرى الإصبعين", 30, 7],
+      ["حجاز", 5, 1],
+      ["نوى", 16, 3],
+      ["حسيني", 6, 1],
+      ["عجم", 32, 5],
+      ["الكردان المخفوض", 7, 1],
+      ["محير", 8, 1],
+    ]
+  );
   make_table("table-inqilab-isbain", new Tone.Frequency("A3").toFrequency(), [
     ["حسيني", 1, 1],
     ["عجم", 16, 15],
