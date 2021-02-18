@@ -27,42 +27,54 @@ function make_table(table_id, tonic_frequency, content) {
     header.insertCell(-1).outerHTML =
       "<th colspan='2'>" + content[i][0] + "</th>";
   }
-  for (i in content) {
-    row = table.insertRow(-1);
-    row.insertCell(0).outerHTML = "<th>" + content[i][0] + "</th>";
-    var j;
-    for (j = 0; j < i; j++) {
-      row.insertCell(-1).outerHTML = "<td colspan='2'></td>";
+  var octave;
+  for (octave = -2; octave <= 2; octave++) {
+    for (i in content) {
+      row = table.insertRow(-1);
+      row.insertCell(0).outerHTML =
+        "<th>" + content[i][0] + " " + octave + "</th>";
+      var j;
+      for (j = 0; j <= i; j++) {
+        var den = content[j][1] * content[i][2];
+        var k;
+        for (k = octave; k < 0; k++) {
+          den *= 2;
+        }
+        var num = content[j][2] * content[i][1];
+        for (k = 0; k < octave; k++) {
+          num *= 2;
+        }
+        var g = gcd(num, den);
+        num /= g;
+        den /= g;
+        var className = "";
+        if (num < 15 && den < 15) className = "good-interval";
+        if (num > 16 || den > 16) className = "bad-interval";
+        if (den === 1 || num === 1) className = "perfect-interval";
+        row.insertCell(-1).outerHTML =
+          "<td onclick='play_interval(" +
+          num / den +
+          "," +
+          (tonic_frequency * content[i][1]) / content[i][2] +
+          ")' class='playable " +
+          className +
+          "'>\\({" +
+          num +
+          " \\over " +
+          den +
+          "}\\)</td>";
+        row.insertCell(-1).outerHTML =
+          "<td class=" +
+          className +
+          ">" +
+          (6 * Math.log2(num / den)).toFixed(3) +
+          "</td>";
+      }
+      for (j = i; j < content.length; j++) {
+        row.insertCell(-1).outerHTML = "<td colspan='2'></td>";
+      }
     }
-    for (j = i; j < content.length; j++) {
-      var num = content[j][1] * content[i][2];
-      var den = content[j][2] * content[i][1];
-      var g = gcd(num, den);
-      num /= g;
-      den /= g;
-      var className = "";
-      if (num < 15 && den < 15) className = "good-interval";
-      if (num > 16 || den > 16) className = "bad-interval";
-      if (den === 1) className = "perfect-interval";
-      row.insertCell(-1).outerHTML =
-        "<td onclick='play_interval(" +
-        num / den +
-        "," +
-        (tonic_frequency * content[i][1]) / content[i][2] +
-        ")' class='playable " +
-        className +
-        "'>\\({" +
-        num +
-        " \\over " +
-        den +
-        "}\\)</td>";
-      row.insertCell(-1).outerHTML =
-        "<td class=" +
-        className +
-        ">" +
-        (6 * Math.log2(num / den)).toFixed(3) +
-        "</td>";
-    }
+    table.insertRow(-1).insertCell(-1);
   }
 }
 
@@ -95,35 +107,10 @@ function load_tables() {
     ["حجاز", 5, 4],
     ["نوى", 4, 3],
     ["حسيني", 3, 2],
+    ["عجم", 8, 5],
+    ["كردان مخفوض", 7, 4],
+    ["محير", 2, 1],
   ]);
-  make_table(
-    "table-isbain-second-octave",
-    new Tone.Frequency("D3").toFrequency(),
-    [
-      ["دوكاه", 1, 1],
-      ["صغرى الإصبعين", 15, 7],
-      ["حجاز", 5, 2],
-      ["نوى", 8, 3],
-      ["حسيني", 3, 1],
-      ["عجم", 16, 5],
-      ["الكردان المخفوض", 7, 2],
-      ["محير", 4, 1],
-    ]
-  );
-  make_table(
-    "table-isbain-third-octave",
-    new Tone.Frequency("D3").toFrequency(),
-    [
-      ["دوكاه", 1, 1],
-      ["صغرى الإصبعين", 30, 7],
-      ["حجاز", 5, 1],
-      ["نوى", 16, 3],
-      ["حسيني", 6, 1],
-      ["عجم", 32, 5],
-      ["الكردان المخفوض", 7, 1],
-      ["محير", 8, 1],
-    ]
-  );
   make_table("table-inqilab-isbain", new Tone.Frequency("A3").toFrequency(), [
     ["حسيني", 1, 1],
     ["عجم", 16, 15],
