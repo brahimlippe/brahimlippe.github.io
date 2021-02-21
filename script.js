@@ -7,16 +7,18 @@ function gcd(a, b) {
   return a;
 }
 function play_interval(ratio, note) {
-  const type = "sawtooth20";
+  const type = "sine";
   const duration = 2;
   const osc1 = new Tone.Oscillator(note, type)
     .toDestination()
     .start()
     .stop("+" + duration + "n");
-  new Tone.Oscillator(osc1.toFrequency(note) * ratio, type)
+  osc1.partials = new Array(15).fill(0).map((i) => 1 / Math.pow(1.05, i));
+  osc2 = new Tone.Oscillator(osc1.toFrequency(note) * ratio, type)
     .toDestination()
     .start("+" + duration + "n")
     .stop("+" + duration / 2 + "n");
+  osc2.partials = new Array(15).fill(0).map((i) => 1 / Math.pow(1.5, i));
 }
 function make_table(table_id, tonic_frequency, content) {
   table = document.getElementById(table_id);
