@@ -57,3 +57,20 @@ h1 {
     margin-right: 0;
     font-weight: bold;
 }
+
+.list-with-sound {
+    height: 50px;
+}
+
+.list-with-sound audio {
+    position: absolute;
+    right: 800px;
+}
+
+.wide-audio {
+    display: block;
+    width: 800px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
