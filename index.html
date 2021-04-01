@@ -11,6 +11,14 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <title>تمرين تتبع الطبقة الصوتية</title>
     <style>
+      #fine-detune-slider-handle {
+	  width: 3em;
+	  height: 1.6em;
+	  top: 50%;
+	  margin-top: -.8em;
+	  text-align: center;
+	  line-height: 1.6em;
+      }
       #detune-slider-handle {
 	  width: 3em;
 	  height: 1.6em;
@@ -31,17 +39,34 @@
   </head>
   <body>
     <div class="container">
-      <form>
-	أدخل الصوت
-	<input type="file" name="الصوت" id="file_input">
+      <form class="my-3">
+	<div class="form-group">
+	  <label for="file_input">أدخل الملف الصوتي</label>
+	  <input class="form-control" type="file" name="الصوت" id="file_input">
+	</div>
       </form>
+      <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+	<span class="ui-icon ui-icon-signal" style="float:left; margin:-2px 5px 0 0;"></span>
+	محرك الطبقة الصوتية
+      </p>
       <div id="detune-slider" class="my-3">
 	  <div id="detune-slider-handle" class="ui-slider-handle"></div>
       </div>
+      <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+	<span class="ui-icon ui-icon-signal" style="float:left; margin:-2px 5px 0 0;"></span>
+	محرك الطبقة الصوتية الدقيق
+      </p>
+      <div id="fine-detune-slider" class="my-3">
+	  <div id="fine-detune-slider-handle" class="ui-slider-handle"></div>
+      </div>
+      <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+	<span class="ui-icon ui-icon-volume-on" style="float:left; margin:-2px 5px 0 0;"></span>
+	شدة الصوت
+      </p>
       <div id="volume-slider" class="my-3">
 	  <div id="volume-slider-handle" class="ui-slider-handle"></div>
       </div>
-      <audio id="audio" controls>
+      <audio id="audio" controls class="mx-auto d-block w-75">
 	<source src="" id="src"/>
       </audio>
     </div>
@@ -73,6 +98,7 @@
       };
       $(function() {
 	  var detune_handle = $( "#detune-slider-handle" );
+	  var fine_detune_handle = $( "#fine-detune-slider-handle" );
 	  var volume_handle = $( "#volume-slider-handle" );
 	  $("#detune-slider").slider({
 	      min: -1200,
@@ -83,7 +109,19 @@
 	      },
 	      slide: function(event, ui) {
 		  detune_handle.text(ui.value);
-		  source.detune.value = ui.value;
+		  source.detune.value = ui.value + $("#fine-detune-slider").slider("option", "value");
+	      }
+	  });
+	  $("#fine-detune-slider").slider({
+	      min: -200,
+	      max: 200,
+	      value: 0,
+	      create: function() {
+		  fine_detune_handle.text($(this).slider("value"));
+	      },
+	      slide: function(event, ui) {
+		  fine_detune_handle.text(ui.value);
+		  source.detune.value = ui.value + $("#detune-slider").slider("option", "value");
 	      }
 	  });
 	  $("#volume-slider").slider({
