@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="dsp.js/dsp.js"></script>
     <title>تمرين تتبع الطبقة الصوتية</title>
     <style>
       #fine-detune-slider-handle {
@@ -48,7 +49,7 @@
       <audio id="audio" controls class="mx-auto d-block w-75">
 	<source src="" id="src"/>
       </audio>
-      <canvas class="m-2" id="visualizer" width="640" height="100"></canvas> 
+      <canvas class="m-2" id="visualizer"></canvas> 
       <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
 	<span class="ui-icon ui-icon-signal" style="float:left; margin:-2px 5px 0 0;"></span>
 	محرك الطبقة الصوتية
@@ -95,10 +96,47 @@
       </div>
     </div>
     <script>
-      const audioElement = document.querySelector('#audio');
       function onNoteClick() {
 	  source.detune.value = makam[parseInt(this.id[4])];
 	  audio.play();
+      }
+      function drawSpectogram(buffer) {
+	  const fft_step = 2048;
+	  var canvas = document.querySelector('#visualizer');
+	  var canvasCtx = canvas.getContext("2d");
+	  const intendedWidth = document.querySelector('.container').clientWidth;
+	  canvas.setAttribute('width', intendedWidth)
+	  canvas.setAttribute('height', 256);
+	  canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+	  canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+	  canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+	  var i;
+	  for (i = 0; i+fft_step < buffer.length; i += fft_step) {
+	      const fft = new FFT(fft_step, audioContext.sampleRate);
+	      const slice = buffer.slice(i, i+fft_step);
+	      fft.forward(slice);
+	      var spectrum = fft.spectrum;
+	      var j;
+	      var spectrumDb = new Float64Array(spectrum.length);
+	      console.log(spectrum);
+	      for (j = 0; j < spectrum.length; j++) {
+		  spectrumDb[j] = -Math.log(spectrum[j]/Math.sqrt(fft_step));
+		  if (!Number.isFinite(spectrumDb[j])) {
+		      spectrumDb[j] = 0;
+		  }
+	      }
+	      console.log(spectrumDb);
+	      const peak = Math.max.apply(Math, spectrumDb);
+	      console.log("peak = " + peak);
+	      if (peak == 0) continue;
+	      const imageData = canvasCtx.getImageData(0, 0, canvas.width, canvas.height);
+	      for (j = 0; j < spectrumDb.length; j++) {
+		  imageData.data[(canvas.height - j)*canvas.width*4 + i/fft_step*4] = (1-spectrumDb[j]/peak)*255;
+	      }
+	      canvasCtx.putImageData(imageData, 0, 0);
+	  }
+	  //const imageData = canvasCtx.getImageData(0, 0, canvas.width, canvas.height);
+	  canvasCtx.scale(intendedWidth/canvas.width, 1);
       }
       document.querySelector("#file_input").addEventListener("change", readFile, false);
       var i;
@@ -106,25 +144,25 @@
       for (i = 0; i < 7; i++) {
 	  document.querySelector("#note" + i).addEventListener("click", onNoteClick, false);
       }
-      var canvas = document.querySelector('#visualizer');
-      var canvasCtx = canvas.getContext("2d");
-      var intendedWidth = document.querySelector('.container').clientWidth;
-      canvas.setAttribute('width',intendedWidth);
       const audioContext = new AudioContext();
-      const track = audioContext.createMediaElementSource(audioElement);
+      const track = audioContext.createMediaElementSource(document.querySelector('#audio'));
       const gainNode = audioContext.createGain();
       const source = audioContext.createBufferSource();
-      const sourceAnalyser = audioContext.createBufferSource();
-      const analyser = audioContext.createAnalyser();
+      const streamNode = audioContext.createMediaStreamDestination();
+/*      const analyser = audioContext.createAnalyser();
       source.playbackRate.value = 1.0;
       source.loop = true;
       analyser.minDecibels = -90;
       analyser.maxDecibels = -10;
       analyser.smoothingTimeConstant = 0.2;
       analyser.fftSize = 8192;
-      const streamNode = audioContext.createMediaStreamDestination();
+      const sourceAnalyser = audioContext.createBufferSource();
       sourceAnalyser.connect(analyser);
       sourceAnalyser.onended = function(event) {
+          var canvas = document.querySelector('#visualizer');
+          var canvasCtx = canvas.getContext("2d");
+          var intendedWidth = document.querySelector('.container').clientWidth;
+          canvas.setAttribute('width',intendedWidth);
 	  WIDTH = canvas.width;
 	  HEIGHT = canvas.height;
 	  var canvasStyle = "bars";
@@ -182,23 +220,27 @@
 	      canvasCtx.fillStyle = "red";
 	      canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 	  }
-      }
+      }*/
       source.connect(gainNode).connect(streamNode);
       document.getElementById("audio").srcObject = streamNode.stream;
       function readFile() {
 	  reader = new FileReader();
 	  reader.onload = (e) => {
 	      const audioBuffer = audioContext.decodeAudioData(e.target.result,
-							       (buf) => {
-								   source.buffer = buf
-								   sourceAnalyser.buffer = buf
-								   source.start(0);
-								   sourceAnalyser.start(0);
+							       (buffer) => {
+								   console.log("Number of channels: " + source.numberOfChannels)
+								   source.buffer = buffer
+								   //sourceAnalyser.buffer = buffer
+								   source.start(0);							  
+								   drawSpectogram(buffer.getChannelData(0));
+								   //sourceAnalyser.start(0);
 							       },
 							       () => { console.log("Decoding audio buffer failed"); });
 	  };
 	  reader.readAsArrayBuffer(this.files[0]);
       };
+
+      // JQuery Sliders initialization
       $(function() {
 	  var detune_handle = $( "#detune-slider-handle" );
 	  var fine_detune_handle = $( "#fine-detune-slider-handle" );
