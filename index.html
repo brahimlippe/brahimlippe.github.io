@@ -110,6 +110,9 @@
 	  canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
 	  canvasCtx.fillStyle = 'rgb(0, 0, 0)';
 	  canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+	  const step_width = Math.round(canvas.width / (buffer.length/fft_step));
+	  console.log(step_width);
+	  const imageData = canvasCtx.getImageData(0, 0, canvas.width, canvas.height);
 	  var i;
 	  for (i = 0; i+fft_step < buffer.length; i += fft_step) {
 	      const fft = new FFT(fft_step, audioContext.sampleRate);
@@ -118,25 +121,22 @@
 	      var spectrum = fft.spectrum;
 	      var j;
 	      var spectrumDb = new Float64Array(spectrum.length);
-	      console.log(spectrum);
 	      for (j = 0; j < spectrum.length; j++) {
 		  spectrumDb[j] = -Math.log(spectrum[j]/Math.sqrt(fft_step));
 		  if (!Number.isFinite(spectrumDb[j])) {
 		      spectrumDb[j] = 0;
 		  }
 	      }
-	      console.log(spectrumDb);
 	      const peak = Math.max.apply(Math, spectrumDb);
-	      console.log("peak = " + peak);
 	      if (peak == 0) continue;
-	      const imageData = canvasCtx.getImageData(0, 0, canvas.width, canvas.height);
 	      for (j = 0; j < spectrumDb.length; j++) {
-		  imageData.data[(canvas.height - j)*canvas.width*4 + i/fft_step*4] = (1-spectrumDb[j]/peak)*255;
+		  var k;
+		  for (k = 0; k < step_width; k++) {
+		      imageData.data[(canvas.height - j)*canvas.width*4 + (step_width*(i/fft_step)+k)*4] = (1-spectrumDb[j]/peak)*255;
+		  }
 	      }
-	      canvasCtx.putImageData(imageData, 0, 0);
 	  }
-	  //const imageData = canvasCtx.getImageData(0, 0, canvas.width, canvas.height);
-	  canvasCtx.scale(intendedWidth/canvas.width, 1);
+	  canvasCtx.putImageData(imageData, 0, 0);
       }
       document.querySelector("#file_input").addEventListener("change", readFile, false);
       var i;
