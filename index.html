@@ -101,12 +101,12 @@
 	  audio.play();
       }
       function drawSpectogram(buffer) {
-	  const fft_step = 2048;
+	  const fft_step = 1024;
 	  var canvas = document.querySelector('#visualizer');
 	  var canvasCtx = canvas.getContext("2d");
 	  const intendedWidth = document.querySelector('.container').clientWidth;
 	  canvas.setAttribute('width', intendedWidth)
-	  canvas.setAttribute('height', 256);
+	  canvas.setAttribute('height', fft_step/2);
 	  canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
 	  canvasCtx.fillStyle = 'rgb(0, 0, 0)';
 	  canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
@@ -129,7 +129,7 @@
 	      }
 	      const peak = Math.max.apply(Math, spectrumDb);
 	      if (peak == 0) continue;
-	      for (j = 0; j < spectrumDb.length; j++) {
+	      for (j = 0; j < canvas.height; j++) {
 		  var k;
 		  for (k = 0; k < step_width; k++) {
 		      imageData.data[(canvas.height - j)*canvas.width*4 + (step_width*(i/fft_step)+k)*4] = (1-spectrumDb[j]/peak)*255;
@@ -145,95 +145,22 @@
 	  document.querySelector("#note" + i).addEventListener("click", onNoteClick, false);
       }
       const audioContext = new AudioContext();
-      const track = audioContext.createMediaElementSource(document.querySelector('#audio'));
       const gainNode = audioContext.createGain();
-      const source = audioContext.createBufferSource();
+      var source = audioContext.createBufferSource();
       const streamNode = audioContext.createMediaStreamDestination();
-/*      const analyser = audioContext.createAnalyser();
-      source.playbackRate.value = 1.0;
-      source.loop = true;
-      analyser.minDecibels = -90;
-      analyser.maxDecibels = -10;
-      analyser.smoothingTimeConstant = 0.2;
-      analyser.fftSize = 8192;
-      const sourceAnalyser = audioContext.createBufferSource();
-      sourceAnalyser.connect(analyser);
-      sourceAnalyser.onended = function(event) {
-          var canvas = document.querySelector('#visualizer');
-          var canvasCtx = canvas.getContext("2d");
-          var intendedWidth = document.querySelector('.container').clientWidth;
-          canvas.setAttribute('width',intendedWidth);
-	  WIDTH = canvas.width;
-	  HEIGHT = canvas.height;
-	  var canvasStyle = "bars";
-	  if(canvasStyle === "sine") {
-	      var bufferLength = analyser.fftSize;
-	      console.log(bufferLength);
-	      var dataArray = new Uint8Array(bufferLength);
-	      canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
-	      analyser.getByteTimeDomainData(dataArray);
-	      canvasCtx.fillStyle = 'rgb(200, 200, 200)';
-	      canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
-	      canvasCtx.lineWidth = 2;
-	      canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
-	      canvasCtx.beginPath();
-
-	      var sliceWidth = WIDTH * 1.0 / bufferLength;
-	      var x = 0;
-	      for(var i = 0; i < bufferLength; i++) {
-		  var v = dataArray[i] / 128.0;
-		  var y = v * HEIGHT/2;
-		  if(i === 0) {
-		      canvasCtx.moveTo(x, y);
-		  } else {
-		      canvasCtx.lineTo(x, y);
-		  }
-		  x += sliceWidth;
-	      }
-	      canvasCtx.lineTo(canvas.width, canvas.height/2);
-	      canvasCtx.stroke();
-	  } else if(canvasStyle === "bars") {
-	      var bufferLengthAlt = analyser.frequencyBinCount;
-	      console.log(bufferLengthAlt);
-	      var dataArrayAlt = new Uint8Array(bufferLengthAlt);
-
-	      canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
-
-	      analyser.getByteFrequencyData(dataArrayAlt);
-
-	      canvasCtx.fillStyle = 'rgb(0, 0, 0)';
-	      canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
-
-	      const barWidth = (WIDTH / bufferLengthAlt) * 2.5;
-	      var x = 0;
-
-	      for(var i = 0; i < bufferLengthAlt; i++) {
-		  var barHeight = dataArrayAlt[i];
-
-		  canvasCtx.fillStyle = 'rgb(' + (barHeight+100) + ',50,50)';
-		  canvasCtx.fillRect(x,HEIGHT-barHeight/2,barWidth,barHeight/2);
-
-		  x += barWidth + 1;
-	      }
-	  } else {
-	      canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
-	      canvasCtx.fillStyle = "red";
-	      canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
-	  }
-      }*/
-      source.connect(gainNode).connect(streamNode);
       document.getElementById("audio").srcObject = streamNode.stream;
       function readFile() {
 	  reader = new FileReader();
 	  reader.onload = (e) => {
 	      const audioBuffer = audioContext.decodeAudioData(e.target.result,
 							       (buffer) => {
-								   console.log("Number of channels: " + source.numberOfChannels)
-								   source.buffer = buffer
-								   //sourceAnalyser.buffer = buffer
-								   source.start(0);							  
+								   console.log("Number of channels: " + source.numberOfChannels);
+								   source.disconnect()
+								   source = audioContext.createBufferSource()
+								   source.buffer = buffer;
+								   source.connect(gainNode).connect(streamNode);
+								   source.start(0);
 								   drawSpectogram(buffer.getChannelData(0));
-								   //sourceAnalyser.start(0);
 							       },
 							       () => { console.log("Decoding audio buffer failed"); });
 	  };
